@@ -32,11 +32,11 @@ body {
 	font-family: 'Open Sans';
 }
 
-.login-content .form-field{
+.login-content .form-group{
 	margin-top: 10px;
 }
 
-.login-content .icon,.login-content .form-input, .login-content .submit-button{
+.login-content .icon,.login-content .form-control, .login-content .submit-button{
 	border-radius: 00.30rem;
 }
 
@@ -53,7 +53,7 @@ body {
 	float: left;
 }
 
-.login-content .form-input {
+.login-content .form-control {
 	border: 0;
 	margin: 0;
     outline: 0;
@@ -69,15 +69,11 @@ body {
 	font-family: 'Open Sans';	
 }
 
-.login-content .form-input:hover{
+.login-content .form-control:hover{
 	background-color:#434A52;
 }
 
-.login-content .form-input:focus{
-	background-color:#868b91;
-}
-
-.login-content .form-input:valid {
+.login-content .form-control:focus{
 	background-color:#868b91;
 }
 
@@ -112,7 +108,7 @@ body {
 	    margin-bottom: 30px;
 		font-size: 28px;
 	}
-    .login-content .form-input {
+    .login-content .form-control {
 	    width:245px;
     }
     .login-content .submit-button{
