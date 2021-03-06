@@ -76,3 +76,75 @@ Home Page
    }
   }
 }
+
+
+
+/*
+====================
+Books
+====================
+*/
+
+.searchbook {
+  padding-left:1210px;
+}
+
+.srch, .searchbook .btnn{
+  border-radius: 00.38rem;
+}
+
+.srch{
+  display: inline-block;
+  float: left;
+  height: 40px;
+  border: 0;
+  width:220px;
+  margin-left: 0px;
+	padding-left: 12px;
+	background-color: rgb(187, 201, 245);
+  transition: background-color .3s;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+	font-family: 'Open Sans', sans-serif;
+  font-size:16px;
+}
+
+.srch:focus, .srch:hover {
+  background-color:rgb(145, 168, 245);
+}
+.searchbook  .btnn{	
+  border: 0;
+  display: inline-block;
+	background-color: rgb(52, 85, 192);
+	height: 40px;
+	width:40px;
+	text-align: center;
+	margin-right: 0px;
+  font-size:17px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;	
+}
+
+.searchbook  .btnn:focus, searchbook  .btnn:hover {
+  background-color:rgb(38, 66, 158);
+}
+
+/* Mobile View */
+@media screen and (max-width: 650px) {
+  .searchbook {
+    padding-left: 42px;
+  }
+  .srch{
+    height: 38px;
+    width:235px;
+    margin-left: 0px;
+	  padding-left: 12px;
+    font-size:16px;
+  }
+  .searchbook  .btnn{	
+  	height: 38px;
+  	width:38px;
+    font-size:17px;	
+  }
+}
+      
