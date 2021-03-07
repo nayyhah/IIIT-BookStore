@@ -1,0 +1,120 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+*{
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+}
+
+body {
+  background-color: #222d32;
+  font-family: "Lato";
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.login-content{
+	box-sizing: border-box;
+	color: #606468;
+	min-height: 100%;
+	padding-top: 100px;
+	padding-left: 600px;
+}
+
+.login-content h2{
+	padding-left: 48px;
+	margin-bottom: 35px;
+	font-family: 'Open Sans';
+}
+
+.login-content .form-group{
+	margin-top: 10px;
+}
+
+.login-content .icon,.login-content .form-control, .login-content .submit-button{
+	border-radius: 00.30rem;
+}
+
+.login-content .icon {
+	display: inline-block;
+	background-color: #363b41;
+	height: 40px;
+	width:40px;
+	text-align: center;
+	padding-top: 10px;
+	margin-right: 0px;
+	border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+	float: left;
+}
+
+.login-content .form-control {
+	border: 0;
+	margin: 0;
+    outline: 0;
+    padding: 0;
+	height: 40px;
+	width:265px;
+	margin-left: 0px;
+	padding-left: 12px;
+	background-color:#3b4148;
+	transition: background-color .3s;
+	border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+	font-family: 'Open Sans';	
+}
+
+.login-content .form-control:hover{
+	background-color:#434A52;
+}
+
+.login-content .form-control:focus{
+	background-color:#868b91;
+}
+
+.login-content .submit-button{
+	border: 0;
+    outline: 0;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	height: 40px;
+	width:305px;
+	background-color:#ea4c88;
+	color:#eee;
+}
+.login-content .submit-button:focus, .login-content .submit-button:hover{
+	background-color:#d44179;
+}
+
+.login-content .signupnow{
+	padding-left: 15px;
+	font-size: 14px;
+	font-family: 'Open Sans';
+}
+
+/* Mobile View */
+@media screen and (max-width: 650px) {
+    .login-content{
+        padding-top: 36px;
+	    padding-left: 33px;
+	}
+	.login-content h2{
+	    padding-left: 48px;
+	    margin-bottom: 30px;
+		font-size: 28px;
+	}
+    .login-content .form-control {
+	    width:245px;
+    }
+    .login-content .submit-button{
+	    width:285px;
+    }
+    .login-content .signupnow{
+	    font-size: 13px;	
+    }
+}

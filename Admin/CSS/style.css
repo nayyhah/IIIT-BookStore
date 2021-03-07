@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate & family=Hachi+Maru+Pop &display=swap');
+
+
+/*
+====================
+Home Page
+====================
+*/
+
+.Afterlogin{
+  background-image: url(../Images/bg.jpg) ;
+  background-repeat: no-repeat;
+}
+.home-content{
+  box-sizing: border-box;
+  height: 460px;
+  width: 460px;
+  margin-left: 560px;
+  margin-top: 130px;    /* ERROR!!!!!! */
+  border-radius: 24rem;
+}
+.home-content h2, .home-content .text{
+  font-size: 70px;
+  text-shadow: 2px 2px #412e2e;
+  color: rgb(19, 18, 18);
+}
+
+.home-content h2{
+  padding-top: 130px;
+  padding-left: 140px;
+  font-family: 'Fascinate', cursive;
+}
+
+.home-content .text{
+  padding-left: 70px;
+  font-family: 'Hachi Maru Pop', cursive;  
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .home-content {
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color:  rgba(77, 73, 73, 0.5);  
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 650px) {
+  .Afterlogin{
+    background-image: url(../Images/bg1.jpg) ;
+    background-repeat: repeat-y;
+  }
+  .home-content{
+    height: 280px;
+    width: 280px;
+    margin-left: 35px;
+    margin-top: 85px;      /* ERROR!!!!!! */
+    border-radius: 24rem;   
+  }
+  .home-content h2, .home-content .text{
+    font-size: 43px;
+    text-shadow: 2px 2px #412e2e;
+  }
+  .home-content h2{
+    padding-top: 80px;
+    padding-left: 100px;
+  }
+  .home-content .text{
+    padding-left: 43px;
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .home-content {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(77, 73, 73, 0.5);  
+   }
+  }
+}
+
+
+
+/*
+====================
+Book Details
+====================
+*/
+.book-details .wrapper{
+  padding-bottom: 50px;
+  margin: 0px 45px 50px 45px;
+}
+
+.book-details .page-header h2{
+  margin-top: 0;
+}
+
+.book-details tbody tr:hover{
+ background-color:#c9ced3;
+}
+
+.book-details table tr td:last-child a{
+  margin-right: 15px;
+}
+
+.book-details thead {
+  font-size: 17px;
+}
+
+.book-details table{
+ font-size: 15px;
+}
+
+
+/*
+====================
+Add Books
+====================
+*/
+.add-books .wrapper{
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+/*
+====================
+View Book Details
+====================
+*/
+.view-book .wrapper{
+  width: 500px;
+  margin: 0 auto;
+}
+
+/*
+====================
+Update Book Details
+====================
+*/
+.update-book .wrapper{
+  width: 500px;
+  margin: 0 auto;
+}
+
+/*
+====================
+Delete Book
+====================
+*/
+.delete-book .wrapper{
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+/*
+====================
+Error Message
+====================
+*/
+.error-message .wrapper{
+  width: 750px;
+  margin: 0 auto;
+
+}

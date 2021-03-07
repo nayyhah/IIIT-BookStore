@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+@import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+
+/*
+====================
+ Navigation Bar
+====================
+*/
+.navbar-brand {
+  padding: 0px;
+}
+.navigation {
+  height: 70px;
+  background-color: black;
+}
+/* IIIT Book-Store*/
+.navigation .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: "RocknRoll One", sans-serif;
+  color: rgb(41, 139, 41);
+  margin-top: 15px;
+}
+
+.navigation .navbar-brand .iiitbookstore {
+  margin-top: 5px;
+}
+
+.navigation .navbar-brand:hover {
+  color: rgb(41, 139, 41);
+}
+
+/* IIIT Logo*/
+.navigation .navbar-brand > img {
+  padding: 8px 0px;
+  height: 67px;
+}
+/* Links */
+.navbar-nav a {
+  margin-top: 17px;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(160, 159, 158);
+}
+
+/* Logout button */
+.logout:hover {
+  color: #2320f0 !important;
+}
+
+/* Mobile View */
+@media screen and (max-width: 650px) {
+  .navigation {
+    height: 53px;
+  }
+  .navigation .navbar-brand {
+    margin-top: 3px;
+  }
+  .navigation .navbar-brand .iiitbookstore {
+    margin-top: 4px;
+    font-size: 16px;
+  }
+  .navigation .navbar-brand > img {
+    padding: 4px 5px;
+    height: 45px;
+  }
+  .navbar-nav a {
+    margin-top: 0px;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  .footer {
+    padding-top: 3.5px;
+    height: 45px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+/*
+====================
+ Footer
+====================
+*/
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 65px;
+  padding-top: 9px;
+  background-color: #0e0c0c;
+  color: rgb(41, 139, 41);
+  text-align: center;
+  font-family: 'Open Sans';
+}
+
+/* Mobile View */
+@media screen and (max-width: 650px) {
+  .footer {
+    padding-top: 3.5px;
+    height: 45px;
+    font-size: 12px;
+  }
+}
