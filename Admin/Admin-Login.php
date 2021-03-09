@@ -129,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="../index.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
                 <li class="active"><a href="Admin-Login.php">Admin <i class="fa fa-user" aria-hidden="true"></i> </a> </li>
-                <li><a href="Student/Student-Signup.php">Student-SignUp <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i></a></li>
+                <li><a href="../Student/Student-Signup.php">Student-SignUp <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i></a></li>
                 <li><a href="../Student/Student-Login.php">Student-Login <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
