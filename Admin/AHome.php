@@ -4,8 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
 
-    
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
 
@@ -15,8 +16,8 @@
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/navbar.css"/>
-
 </head>
+
 <body class="Afterlogin">
   
     <!-- Navigation -->
@@ -36,15 +37,16 @@
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="AHome.php">Home</a></li>
-                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
+                <li class="active"><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Home Content  -->
     <div class="home-content">
       <h2>IIIT</h2>
       <div class="text">
@@ -66,5 +68,6 @@
 
     <!-- JavaScript Linked-->
     <script src="Javascript/navbar.js"></script>
+    
   </body>
 </html>
