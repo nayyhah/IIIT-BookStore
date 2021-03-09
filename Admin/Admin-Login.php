@@ -77,12 +77,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
-
             // Close statement
             mysqli_stmt_close($stmt);
         }
     }
-    
     // Close connection
     mysqli_close($link);
 }
@@ -91,9 +89,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html>
 <head>
+
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
 
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
@@ -101,11 +102,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/LoginSignup.css">
-
 
     <title>IIIT Book-Shop</title>
 </head>
@@ -128,15 +127,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index.php">Home</a></li>
-                <li class="active"><a href="Admin-Login.php">Admin <i class="fa fa-user" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
-                <li><a class="logout" href="../Student/Student-Login.php">Student-Login <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i> </a> </li>
+                <li><a href="../index.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li class="active"><a href="Admin-Login.php">Admin <i class="fa fa-user" aria-hidden="true"></i> </a> </li>
+                <li><a href="Student/Student-Signup.php">Student-SignUp <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i></a></li>
+                <li><a href="../Student/Student-Login.php">Student-Login <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Login Content -->
+    <!-- Admin Login Content -->
     <div class="login-content">
         <h2>Admin Login</h2>
         <div class="lform">
