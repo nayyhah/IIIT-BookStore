@@ -22,8 +22,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         } else{
             echo "Oops! Something went wrong. Please try again later.";
         }
-    }
-     
+    }    
     // Close statement
     mysqli_stmt_close($stmt);
     
@@ -47,7 +46,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
     
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
@@ -60,7 +60,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <link rel="stylesheet" href="CSS/navbar.css"/>
 
     <title>IIIT Book-Shop</title>
-
 </head>
 
 <body class="delete-book">
@@ -82,21 +81,22 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php">Home</a></li>
-                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
+                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o"  aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Remove User -->
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>Delete Book</h1>
+                        <h1>Remove User</h1>
                     </div>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="alert alert-danger fade in">
@@ -113,7 +113,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         </div>
     </div>
 
-
     <!-- Footer  -->
     <footer id="footer" class="footer">
       <p class="text-center">
@@ -122,13 +121,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
       </p>
     </footer>
 
-
     <!-- Bootsrtap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- JavaScript Linked-->
     <script src="Javascript/navbar.js"></script>
-
+    
 </body>
 </html>
