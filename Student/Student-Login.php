@@ -1,9 +1,10 @@
+<?php
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// Check if the user is already logged in, if yes then redirect him to After Login Home Page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: AHome.php");
     exit;
 }
  
@@ -62,8 +63,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
-                            // Redirect user to welcome page
-                            header("location: welcome.php");
+                            // Redirect user to After Login Home page
+                            header("location: AHome.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -76,7 +77,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
-
             // Close statement
             mysqli_stmt_close($stmt);
         }
@@ -84,8 +84,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Close connection
     mysqli_close($link);
-    header("location: AHome.php");
-    exit;
 }
 ?>
  
@@ -100,13 +98,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/LoginSignup.css">
-
 
     <title>IIIT Book-Shop</title>
 </head>
@@ -129,9 +125,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="BHome.php">Home</a></li>
-                <li><a href="../Admin/Admin-Login.php">Admin <i class="fa fa-user" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
-                <li><a class="logout" href="Student-Signup.php">Student-Signup <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i> </a> </li>
+                <li><a href="../index.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li><a href="../Admin/Admin-Login.php">Admin <i class="fa fa-user" aria-hidden="true"></i> </a> </li>
+                <li><a href="Student-Signup.php">Student-Signup <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
       </div>
