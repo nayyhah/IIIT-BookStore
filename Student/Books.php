@@ -23,11 +23,12 @@
     <style type="text/css">
         .search-box
         {
-            width: 250px;
-            margin-left: 934px;
+            width: 245px;
+            margin-top:26px;
             position: relative;
             display: inline-block;
             font-size: 14px;
+            
         }
         .search-box input[type="text"]
         {
@@ -35,6 +36,7 @@
             padding: 5px 10px;
             border: 1px solid #CCCCCC;
             font-size: 14px;
+            border-radius: 00.30rem;
         }
         .result
         {
@@ -62,9 +64,14 @@
         {
             background: #f2f2f2;
         }
+        .result p a
+        {
+            font-weight:normal;
+            font-size:14px;
+        }
         .result p a:hover
         {
-            text-decoration: none;
+            text-decoration: none;  
         }
     </style>
 
@@ -121,10 +128,16 @@
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php">Home</a></li>
-                <li class="active"><a href="Books.php">Books <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="Profile.php">Profile <i class="fa fa-user" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
-                <li><a class="logout" href="Student-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
+                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li class="active"><a href="Books.php">Books <i class="fa fa-bookmark-o" aria-hidden="true"></i></a></li>
+                <li><a class="logout" href="Student-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a>
+                <li>
+                    <div class="search-box">
+                        <input type="text" autocomplete="off" placeholder="Search Book..." />
+                        <div class="result"></div>
+                    </div>
+                    <div class="search-button"></div> </li>
+                </li>
             </ul>
         </div>
       </div>
@@ -135,12 +148,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Book Details <i class="fa fa-bookmark" aria-hidden="true"></i></h2>
-                        <div class="search-box">
-                            <input type="text" autocomplete="off" placeholder="Search Book..." />
-                            <div class="result"></div>
-                        </div>
-                        <div class="search-button"></div>
+                        <h2 class="pull-left">Books Available <i class="fa fa-bookmark" aria-hidden="true"></i></h2>  
+                        <a href="BookCart.php" class="btn btn-success pull-right">View Book-Cart <i class="fa fa-shopping-cart"  aria-hidden="true"></i></a> 
                     </div>
                     <?php
                     // Include config file
