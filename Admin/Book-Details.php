@@ -5,7 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
     
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
@@ -18,7 +19,6 @@
     <link rel="stylesheet" href="CSS/navbar.css"/>
 
     <title>IIIT Book-Shop</title>
-
 </head>
 
 <body class="book-details">
@@ -40,21 +40,22 @@
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php">Home</a></li>
-                <li class="active"><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
+                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li class="active"><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Book Details Content -->
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Books Details</h2>
+                        <h2 class="pull-left">Available Books <i class="fa fa-bookmark" aria-hidden="true"></i></h2>
                         <a href="AddBooks.php" class="btn btn-success pull-right">Add New Book</a>
                     </div>
                     <?php
@@ -101,7 +102,7 @@
                     } else{
                         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                     }
- 
+
                     // Close connection
                     mysqli_close($link);
                     ?>
@@ -109,8 +110,6 @@
             </div>        
         </div>
     </div>
-
-
 
     <!-- Footer  -->
     <footer id="footer" class="footer">
