@@ -3,8 +3,8 @@
 require_once "../connectserver.php";
  
 // Define variables and initialize with empty values
-$name = $author = $edition = $status = $quantity =  "";
-$name_err = $author_err = $edition_err = $status_err = $quantity_err =  "";
+$name = $author = $edition = $status =$image = $price = $quantity = "";
+$name_err = $author_err = $edition_err = $status_err = $image_err= $price_err = $quantity_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
@@ -15,76 +15,95 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
     $input_name = trim($_POST["name"]);
     if(empty($input_name)){
         $name_err = "Please enter Book's name.";
-    } else{
+    }else{
         $name = $input_name;
     }
-
-    // Validate Author's Name
+    
+    // Validate Book's Author
     $input_author = trim($_POST["author"]);
     if(empty($input_author)){
-        $author_err = "Please Enter Author's Name.";
+        $author_err = "Please enter Author's Name.";     
     } else{
         $author = $input_author;
     }
-    
-    // Validate Edition
+
+    // Validate Book's Edition
     $input_edition = trim($_POST["edition"]);
     if(empty($input_edition)){
-        $edition_err = "Please Enter Book's Edition.";     
+        $edition_err = "Please enter Book's Edition.";     
     } else{
         $edition = $input_edition;
+    }
+
+    // Validate Book's Price
+    $input_price = trim($_POST["price"]);
+    if(empty($input_price)){
+        $price_err = "Please enter the price amount.";     
+    } elseif(!ctype_digit($input_price)){
+        $price_err = "Please enter a positive integer value.";
+    } else{
+        $price = $input_price;
     }
     
     // Validate Quantity
     $input_quantity = trim($_POST["quantity"]);
     if(empty($input_quantity)){
-        $quantity_err = "Please Enter Quantity of Book.";     
+        $quantity_err = "Please enter the quantity amount.";     
     } elseif(!ctype_digit($input_quantity)){
         $quantity_err = "Please enter a positive integer value.";
     } else{
         $quantity = $input_quantity;
     }
 
-    // Validate Availability Status
+    // Validate Book's Image
+    $input_image = trim($_POST["image"]);
+    if(empty($input_image)){
+        $image_err = "Please enter Book's Image.";     
+    }else{
+        $image = $input_image;
+    }
+
+    // Validate Book's Status
     if( $input_quantity < 1 ){
         $status="Not Available";
     }
     else{
         $status="Available";
     }
-    
+
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($author_err) && empty($edition_err) && empty($status_err) && empty($quantity_err)){
+    if(empty($name_err) && empty($author_err) && empty($edition_err && empty($status_err) && empty($image_err)&& empty($price_err) && empty($quantity_err) )){
         // Prepare an update statement
-        $sql = "UPDATE books SET name=?, author=?, edition=?, status=?, quantity=? WHERE id=?";
-    
+        $sql = "UPDATE books SET name=?, author=?, edition=?, status=?,image=?, price=?, quantity=? WHERE bookid=?";
+         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssi", $param_name, $param_author, $param_edition, $param_status, $param_quantity);
+            mysqli_stmt_bind_param($stmt, "sssssssi", $param_name, $param_author, $param_edition, $param_status, $param_image, $param_price, $param_quantity, $param_bookid);
             
             // Set parameters
             $param_name = $name;
             $param_author = $author;
             $param_edition = $edition;
             $param_status = $status;
+            $param_price = $price;
+            $param_image = $image;
             $param_quantity = $quantity;
+            $param_bookid = $bookid;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location:  Book-Details.php");
+                header("location: Book-Details.php");
                 exit();
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Something went wrong. Please try again later.";
             }
-
         }
-
+         
         // Close statement
         mysqli_stmt_close($stmt);
-        
     }
-        
+    
     // Close connection
     mysqli_close($link);
 } else{
@@ -114,11 +133,11 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
                     $name = $row["name"];
                     $author = $row["author"];
                     $edition = $row["edition"];
-                    $status = $row["status"];
+                    $image = $row["image"];
+                    $price = $row["price"];
                     $quantity = $row["quantity"];
-
                 } else{
-                    // URL doesn't contain valid bookid. Redirect to error page
+                    // URL doesn't contain valid id. Redirect to error page
                     header("location: ErrorMessage.php");
                     exit();
                 }
@@ -134,7 +153,7 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
         // Close connection
         mysqli_close($link);
     }  else{
-        // URL doesn't contain bookid parameter. Redirect to error page
+        // URL doesn't contain id parameter. Redirect to error page
         header("location: ErrorMessage.php");
         exit();
     }
@@ -148,7 +167,8 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
     
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
@@ -161,9 +181,8 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
     <link rel="stylesheet" href="CSS/navbar.css"/>
 
     <title>IIIT Book-Shop</title>
-
 </head>
- 
+
 <body class="update-book">
 
     <!-- Navigation -->
@@ -183,7 +202,7 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php">Home</a></li>
+                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
                 <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
                 <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
@@ -192,13 +211,13 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
       </div>
     </nav>
 
-
+    <!-- Update Book Content -->
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2>Edit Book Details</h2>
+                        <h2>Update Book Record</h2>
                     </div>
                     <p>Please edit the input values and submit to update the record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
@@ -209,27 +228,33 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
                         </div>
 
                         <div class="form-group <?php echo (!empty($author_err)) ? 'has-error' : ''; ?>">
-                            <label>Book's Author</label>
-                            <input type="text" name="author" class="form-control" value="<?php echo $author; ?>">
+                            <label>Author's Name</label>
+                            <textarea name="author" class="form-control"><?php echo $author; ?></textarea>
                             <span class="help-block"><?php echo $author_err;?></span>
                         </div>
 
                         <div class="form-group <?php echo (!empty($edition_err)) ? 'has-error' : ''; ?>">
                             <label>Book's Edition</label>
-                            <input type="text" name="edition" class="form-control" value="<?php echo $edition; ?>">
+                            <textarea name="edition" class="form-control"><?php echo $edition; ?></textarea>
                             <span class="help-block"><?php echo $edition_err;?></span>
                         </div>
 
-                        <div class="form-group <?php echo (!empty($status)) ? 'has-error' : ''; ?>">
-                            <label>Availability Status</label>
-                            <input type="text" name="status" class="form-control" value="<?php echo $status; ?>">
-                            <span class="help-block"><?php echo $status_err;?></span>
+                        <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
+                            <label>Book's Price (in Rs.)</label>
+                            <textarea name="price" class="form-control"><?php echo $price; ?></textarea>
+                            <span class="help-block"><?php echo $price_err;?></span>
                         </div>
 
-                        <div class="form-group <?php echo (!empty($quantity)) ? 'has-error' : ''; ?>">
-                            <label>Quantity Available</label>
+                        <div class="form-group <?php echo (!empty($quantity_err)) ? 'has-error' : ''; ?>">
+                            <label>Quantity</label>
                             <input type="text" name="quantity" class="form-control" value="<?php echo $quantity; ?>">
                             <span class="help-block"><?php echo $quantity_err;?></span>
+                        </div>
+
+                        <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
+                            <label>Book's Image</label>
+                            <textarea name="image" class="form-control"><?php echo $image; ?></textarea>
+                            <span class="help-block"><?php echo $image_err;?></span>
                         </div>
 
                         <input type="hidden" name="bookid" value="<?php echo $bookid; ?>"/>
@@ -248,7 +273,6 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
         <br />Mobile: 0674-2653-321
       </p>
     </footer>
-
 
     <!-- Bootsrtap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
