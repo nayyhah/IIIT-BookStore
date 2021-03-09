@@ -5,7 +5,6 @@ require_once "../connectserver.php";
 // Define variables and initialize with empty values
 $name = $author = $edition = $status = $price = $quantity =  "";
 $name_err = $author_err = $edition_err = $status_err = $price_err = $quantity_err =  "";
-
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -88,11 +87,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Something went wrong. Please try again later.";
             }
         }
-         
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    
     // Close connection
     mysqli_close($link);
 }
@@ -101,10 +98,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html>
 <head>
-
     <!-- Required meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
 
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
@@ -138,16 +136,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php">Home</a></li>
-                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
+                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
       </div>
     </nav>
 
-
+    <!-- Add Books Content -->
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -197,7 +195,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <br />Mobile: 0674-2653-321
       </p>
     </footer>
-
 
     <!-- Bootsrtap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
