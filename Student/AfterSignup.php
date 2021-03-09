@@ -96,6 +96,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <meta name="author" content="Neha Jha">
+    <meta name="description" content="RDBMS Project">
 
     <!-- Icon -->
     <link rel="icon" href="Images/iiit-logo.png" sizes="35x35" type="image/png">
@@ -103,11 +105,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/LoginSignup.css">
-
 
     <title>IIIT Book-Shop</title>
 </head>
@@ -130,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="../index.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
                 <li><a href="../Admin/Admin-Login.php">Admin <i class="fa fa-user" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Student-Signup.php">Student-Signup <i class="fa fa-sign-in" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
@@ -155,7 +155,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <span class="help-block"><?php echo $password_err; ?></span>
                 </div>
                 <input class="btn btn-primary submit-button" type="submit" value="Login">
-                
             </form>
         </div>
     </div> 
@@ -174,5 +173,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <!-- JavaScript Linked-->
     <script src="../Javascript/navbar.js"></script>
+    
 </body>
 </html>
