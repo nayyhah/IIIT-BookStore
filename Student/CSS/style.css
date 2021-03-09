@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Fascinate & family=Hachi+Maru+Pop &display=swap');
 
 
+
+/*
+====================
+Reset Password
+====================
+*/
+
+.reset-password { 
+  font: 14px sans-serif; 
+}
+
+.reset-password .wrapper{ 
+  width: 350px; 
+  padding: 20px;
+  margin-top: 90px; 
+  margin-left: 550px;
+}
+
 /*
 ====================
 Home Page
 ====================
 */
 
-.index{
+.Afterlogin{
   background-image: url(../Images/bg.jpg) ;
   background-repeat: no-repeat;
 }
@@ -46,7 +64,7 @@ Home Page
 
 /* Mobile View */
 @media screen and (max-width: 650px) {
-  .index{
+  .Afterlogin{
     background-image: url(../Images/bg1.jpg) ;
     background-repeat: repeat-y;
   }
@@ -81,70 +99,178 @@ Home Page
 
 /*
 ====================
-Books
+Book Details
 ====================
 */
 
-.searchbook {
-  padding-left:1210px;
+.book-details .wrapper{
+  padding-bottom: 50px;
+  margin: 0px 45px 50px 45px;
+ 
 }
 
-.srch, .searchbook .btnn{
-  border-radius: 00.38rem;
+.book-details table{
+ font-size: 15px;
 }
 
-.srch{
-  display: inline-block;
-  float: left;
-  height: 40px;
-  border: 0;
-  width:220px;
-  margin-left: 0px;
-	padding-left: 12px;
-	background-color: rgb(187, 201, 245);
-  transition: background-color .3s;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-	font-family: 'Open Sans', sans-serif;
-  font-size:16px;
+.book-details tbody tr:hover{
+ background-color:#c9ced3;
 }
 
-.srch:focus, .srch:hover {
-  background-color:rgb(145, 168, 245);
+.book-details .page-header h2{
+  margin-top: 0;
 }
-.searchbook  .btnn{	
-  border: 0;
-  display: inline-block;
-	background-color: rgb(52, 85, 192);
-	height: 40px;
-	width:40px;
+.book-details table tr td:last-child a{
+  margin-left: 40px;
+}
+
+/*
+====================
+View Book Details
+====================
+*/
+
+.view-book h1{
+  font-size: 34px;
+}
+.view-book .wrapper{
+  width: 500px;
+  margin: 0 auto;
+}
+.view-book .wrapper label{
+  font-size: 17px;
+}
+.view-book .wrapper p{
+  font-size: 15px;
+}
+
+
+/*
+====================
+Add to Cart Page
+====================
+*/
+.myproduct body {
+	font-family: Arial;
+	color: #211a1a;
+	font-size: 0.9em;
+}
+
+#shopping-cart {
+	margin: 40px;
+}
+
+#product-grid {
+	margin: 40px;
+}
+
+#shopping-cart table {
+	width: 100%;
+	background-color: #F0F0F0;
+}
+
+#shopping-cart table td {
+	background-color: #FFFFFF;
+}
+
+.txt-heading {
+	color: #211a1a;
+	border-bottom: 2px solid #E0E0E0;
+	overflow: auto;
+}
+
+#btnEmpty {
+	background-color: #ffffff;
+	border: #d00000 1px solid;
+	padding: 5px 10px;
+	color: #d00000;
+	float: right;
+	text-decoration: none;
+	border-radius: 3px;
+	margin: 10px 0px;
+}
+
+.btnAddAction {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #efefef;
+    border: #E0E0E0 1px solid;
+    color: #211a1a;
+    float: right;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#product-grid .txt-heading {
+	margin-bottom: 18px;
+}
+
+.product-item {
+	float: left;
+	background: #ffffff;
+	margin: 30px 30px 0px 0px;
+	border: #E0E0E0 1px solid;
+}
+
+.product-image {
+	height: 155px;
+	width: 250px;
+	background-color: #FFF;
+}
+
+.clear-float {
+	clear: both;
+}
+
+.demo-input-box {
+	border-radius: 2px;
+	border: #CCC 1px solid;
+	padding: 2px 1px;
+}
+
+.tbl-cart {
+	font-size: 0.9em;
+}
+
+.tbl-cart th {
+	font-weight: normal;
+}
+
+.product-title {
+	margin-bottom: 20px;
+}
+
+.product-price {
+	float:left;
+}
+
+.cart-action {
+	float: right;
+}
+
+.product-quantity {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: #E0E0E0 1px solid;
+}
+
+.product-tile-footer {
+    padding: 15px 15px 0px 15px;
+    overflow: auto;
+}
+
+.cart-item-image {
+	width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: #E0E0E0 1px solid;
+    padding: 5px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.no-records {
 	text-align: center;
-	margin-right: 0px;
-  font-size:17px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;	
+	clear: both;
+	margin: 38px 0px;
 }
-
-.searchbook  .btnn:focus, searchbook  .btnn:hover {
-  background-color:rgb(38, 66, 158);
-}
-
-/* Mobile View */
-@media screen and (max-width: 650px) {
-  .searchbook {
-    padding-left: 42px;
-  }
-  .srch{
-    height: 38px;
-    width:235px;
-    margin-left: 0px;
-	  padding-left: 12px;
-    font-size:16px;
-  }
-  .searchbook  .btnn{	
-  	height: 38px;
-  	width:38px;
-    font-size:17px;	
-  }
-}
-      
