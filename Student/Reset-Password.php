@@ -129,6 +129,7 @@
       </div>
     </nav>
 
+    <!-- Reset Password Content -->
     <div class="wrapper">
         <h2>Reset Password</h2>
         <p>Please fill out this form to reset your password.</p>
@@ -148,6 +149,22 @@
                 <a class="btn btn-link" href="AHome.php">Cancel</a>
             </div>
         </form>
-    </div>    
+    </div> 
+
+    <!-- Footer  -->
+    <footer id="footer" class="footer">
+      <p class="text-center">
+        Email: library@iiit-bh.ac.in
+        <br />Mobile: 0674-2653-321
+      </p>
+    </footer>
+
+    <!-- Bootsrtap JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript Linked-->
+    <script src="Javascript/navbar.js"></script>
+    
 </body>
 </html>
