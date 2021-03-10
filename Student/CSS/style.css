@@ -2,98 +2,68 @@
 
 /*
 ====================
-Reset Password
-====================
-*/
-
-.reset-password { 
-  font: 14px sans-serif; 
-}
-
-.reset-password .wrapper{ 
-  width: 350px; 
-  padding: 20px;
-  margin-top: 90px; 
-  margin-left: 550px;
-}
-
-/*
-====================
 Home Page
 ====================
 */
 
-.Afterlogin{
-  background-image: url(../Images/bg.jpg) ;
+.Afterlogin {
+  background-image: url(../Images/bg.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
-.home-content{
+.home-content {
   box-sizing: border-box;
-  height: 460px;
+  height: 590px;
   width: 460px;
   margin-left: 560px;
-  margin-top: 130px;    /* ERROR!!!!!! */
+  margin-top: 130px; /* ERROR!!!!!! */
   border-radius: 24rem;
 }
-.home-content h2, .home-content .text{
+.home-content h2,
+.home-content .text {
   font-size: 70px;
   text-shadow: 2px 2px #412e2e;
   color: rgb(19, 18, 18);
 }
 
-.home-content h2{
+.home-content h2 {
   padding-top: 130px;
   padding-left: 140px;
   font-family: 'Fascinate', cursive;
 }
 
-.home-content .text{
+.home-content .text {
   padding-left: 70px;
-  font-family: 'Hachi Maru Pop', cursive;  
+  font-family: 'Hachi Maru Pop', cursive;
 }
 
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .home-content {
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    background-color:  rgba(77, 73, 73, 0.5);  
-  }
-}
 
 /* Mobile View */
 @media screen and (max-width: 650px) {
-  .Afterlogin{
-    background-image: url(../Images/bg1.jpg) ;
+  .Afterlogin {
+    background-image: url(../Images/bg1.jpg);
     background-repeat: repeat-y;
   }
-  .home-content{
+  .home-content {
     height: 280px;
     width: 280px;
     margin-left: 35px;
-    margin-top: 85px;      /* ERROR!!!!!! */
-    border-radius: 24rem;   
+    margin-top: 85px; /* ERROR!!!!!! */
+    border-radius: 24rem;
   }
-  .home-content h2, .home-content .text{
+  .home-content h2,
+  .home-content .text {
     font-size: 43px;
     text-shadow: 2px 2px #412e2e;
   }
-  .home-content h2{
+  .home-content h2 {
     padding-top: 80px;
     padding-left: 100px;
   }
-  .home-content .text{
+  .home-content .text {
     padding-left: 43px;
   }
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .home-content {
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    background-color: rgba(77, 73, 73, 0.5);  
-   }
-  }
 }
-
-
 
 /*
 ====================
@@ -101,24 +71,23 @@ Book Details
 ====================
 */
 
-.book-details .wrapper{
-  padding-bottom: 50px;
+.book-details .wrapper {
+  /* padding-bottom: 50px; */
   margin: 0px 45px 50px 45px;
- 
 }
 
-.book-details table{
- font-size: 15px;
+.book-details table {
+  font-size: 15px;
 }
 
-.book-details tbody tr:hover{
- background-color:#c9ced3;
+.book-details tbody tr:hover {
+  background-color: #c9ced3;
 }
 
-.book-details .page-header h2{
+.book-details .page-header h2 {
   margin-top: 0;
 }
-.book-details table tr td:last-child a{
+.book-details table tr td:last-child a {
   margin-left: 40px;
 }
 
@@ -128,20 +97,19 @@ View Book Details
 ====================
 */
 
-.view-book h1{
+.view-book h1 {
   font-size: 34px;
 }
-.view-book .wrapper{
+.view-book .wrapper {
   width: 500px;
   margin: 0 auto;
 }
-.view-book .wrapper label{
+.view-book .wrapper label {
   font-size: 17px;
 }
-.view-book .wrapper p{
+.view-book .wrapper p {
   font-size: 15px;
 }
-
 
 /*
 ====================
@@ -149,126 +117,127 @@ Add to Cart Page
 ====================
 */
 .myproduct body {
-	font-family: Arial;
-	color: #211a1a;
-	font-size: 0.9em;
+  font-family: Arial;
+  color: #211a1a;
+  font-size: 0.9em;
 }
 
 #shopping-cart {
-	margin: 40px;
+  margin: 40px;
 }
 
 #product-grid {
-	margin: 40px;
+  margin: 40px;
 }
 
 #shopping-cart table {
-	width: 100%;
-	background-color: #F0F0F0;
+  width: 100%;
+  background-color: #f0f0f0;
 }
 
 #shopping-cart table td {
-	background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .txt-heading {
-	color: #211a1a;
-	border-bottom: 2px solid #E0E0E0;
-	overflow: auto;
+  color: #211a1a;
+  border-bottom: 2px solid #e0e0e0;
+  overflow: auto;
 }
 
 #btnEmpty {
-	background-color: #ffffff;
-	border: #d00000 1px solid;
-	padding: 5px 10px;
-	color: #d00000;
-	float: right;
-	text-decoration: none;
-	border-radius: 3px;
-	margin: 10px 0px;
+  background-color: #ffffff;
+  border: #d00000 1px solid;
+  padding: 5px 10px;
+  color: #d00000;
+  float: right;
+  text-decoration: none;
+  border-radius: 3px;
+  margin: 10px 0px;
 }
 
 .btnAddAction {
-    padding: 5px 10px;
-    margin-left: 5px;
-    background-color: #efefef;
-    border: #E0E0E0 1px solid;
-    color: #211a1a;
-    float: right;
-    text-decoration: none;
-    border-radius: 3px;
-    cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 5px;
+  background-color: #efefef;
+  border: #e0e0e0 1px solid;
+  color: #211a1a;
+  float: right;
+  text-decoration: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 #product-grid .txt-heading {
-	margin-bottom: 18px;
+  margin-bottom: 18px;
 }
 
 .product-item {
-	float: left;
-	background: #ffffff;
-	margin: 30px 30px 0px 0px;
-	border: #E0E0E0 1px solid;
+  float: left;
+  background: #ffffff;
+  margin: 30px 30px 0px 0px;
+  border: #e0e0e0 1px solid;
 }
 
 .product-image {
-	height: 155px;
-	width: 250px;
-	background-color: #FFF;
+  height: 155px;
+  width: 250px;
+  background-color: #fff;
 }
 
 .clear-float {
-	clear: both;
+  clear: both;
 }
 
 .demo-input-box {
-	border-radius: 2px;
-	border: #CCC 1px solid;
-	padding: 2px 1px;
+  border-radius: 2px;
+  border: #ccc 1px solid;
+  padding: 2px 1px;
 }
 
 .tbl-cart {
-	font-size: 0.9em;
+  font-size: 0.9em;
 }
 
 .tbl-cart th {
-	font-weight: normal;
+  font-weight: normal;
 }
 
 .product-title {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .product-price {
-	float:left;
+  float: left;
 }
 
 .cart-action {
-	float: right;
+  float: right;
 }
 
 .product-quantity {
-    padding: 5px 10px;
-    border-radius: 3px;
-    border: #E0E0E0 1px solid;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: #e0e0e0 1px solid;
 }
 
 .product-tile-footer {
-    padding: 15px 15px 0px 15px;
-    overflow: auto;
+  padding: 15px 15px 15px 15px;
+  overflow: auto;
 }
 
 .cart-item-image {
-	width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: #E0E0E0 1px solid;
-    padding: 5px;
-    vertical-align: middle;
-    margin-right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: #e0e0e0 1px solid;
+  padding: 5px;
+  vertical-align: middle;
+  margin-right: 15px;
 }
 .no-records {
-	text-align: center;
-	clear: both;
-	margin: 38px 0px;
+  text-align: center;
+  clear: both;
+  margin: 38px 0px;
 }
+

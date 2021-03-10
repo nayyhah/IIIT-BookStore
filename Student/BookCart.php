@@ -14,21 +14,23 @@
 		
 		            if(!empty($_SESSION["cart_item"])) 
                     {
-			            if(in_array($productByBookid[0]["bookid"],array_keys($_SESSION["cart_item"]))) 
-                        {
+			            // if(in_array($productByBookid[0]["bookid"],array_keys($_SESSION["cart_item"]))) 
+                        // {
+                            $flag = 0;
 				            foreach($_SESSION["cart_item"] as $k => $v) 
                             {
-						        if($productByBookid[0]["bookid"] == $k) 
+						        if($productByBookid[0]["bookid"] == $_SESSION["cart_item"][$k]["bookid"]) 
                                 {
 							        if(empty($_SESSION["cart_item"][$k]["quantity"])) 
                                     {
 								        $_SESSION["cart_item"][$k]["quantity"] = 0;
 							        }
 							        $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+                                    $flag = 1;
 						        }
 				            }
-			            }
-                        else 
+			            // }
+                        if($flag == 0)
                         {
 				            $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
 			            }
@@ -46,10 +48,12 @@
                 {
 		            foreach($_SESSION["cart_item"] as $k => $v) 
                     {
-			            if($_GET["bookid"] == $k)
-				        unset($_SESSION["cart_item"][$k]);				
+                        // print($_SESSION["cart_item"][$k]["bookid"]);
+                        // print($_GET["bookid"]);
+			            if($_GET["bookid"] == $_SESSION["cart_item"][$k]["bookid"])
+				            unset($_SESSION["cart_item"][$k]);				
 			            if(empty($_SESSION["cart_item"]))
-				        unset($_SESSION["cart_item"]);
+				            unset($_SESSION["cart_item"]);
 		            }
 	            }
 	        break;
@@ -116,6 +120,7 @@
     <div id="shopping-cart">
         <div class="txt-heading">Shopping Cart</div>
         <a id="btnEmpty" href="BookCart.php?action=empty">Empty Cart</a>
+        <!-- <a id="btnEmpty" href="BookCart.php?action=empty" style="margin-right: 15px; color: green; border-color: green">ORDER</a> -->
 
         <?php
             if(isset($_SESSION["cart_item"])){
@@ -175,7 +180,7 @@
 	        ?>
 	            <div class="product-item">
 		            <form method="post" action="BookCart.php?action=add&bookid=<?php echo $product_array[$key]["bookid"]; ?>">
-			            <div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
+			            <div class="product-image" style="width: 100%"><img src="<?php echo $product_array[$key]["image"]; ?>" style="width: 100%; height: inherit"></div>
 			            <div class="product-tile-footer">
 			            <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
 			            <div class="product-price"><?php echo "<i class='fa fa-inr' aria-hidden='true'></i> ".$product_array[$key]["price"]; ?></div>
@@ -185,14 +190,8 @@
 		        </div>
 	    <?php } } ?>
     </div>
-
-    <!-- Footer  -->
-    <footer id="footer" class="footer">
-      <p class="text-center">
-        Email: library@iiit-bh.ac.in
-        <br />Mobile: 0674-2653-321
-      </p>
-    </footer>
+    
+    <div style="height: 900px"></div>
 
     <!-- Bootsrtap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_image = trim($_POST["image"]);
     if(empty($input_image)){
         $image_err = "Please enter Book's Image.";     
-    }else{
+    } else{
         $image = $input_image;
     }
 
@@ -155,7 +155,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </nav>
 
     <!-- Add Books Content -->
-    <div class="wrapper">
+    <div class="wrapper" style="margin-bottom: 40px">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -219,4 +219,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 </body>
 </html>
-
