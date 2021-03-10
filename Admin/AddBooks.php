@@ -3,8 +3,8 @@
 require_once "../connectserver.php";
  
 // Define variables and initialize with empty values
-$name = $author = $edition = $status = $price = $quantity =  "";
-$name_err = $author_err = $edition_err = $status_err = $price_err = $quantity_err =  "";
+$name = $author = $edition = $status = $image = $price = $quantity =  "";
+$name_err = $author_err = $edition_err = $status_err  = $image_err = $price_err = $quantity_err =  "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -53,6 +53,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $quantity = $input_quantity;
     }
 
+    // Validate Book's Image
+    $input_image = trim($_POST["image"]);
+    if(empty($input_image)){
+        $image_err = "Please enter Book's Image.";     
+    }else{
+        $image = $input_image;
+    }
+
     // Validate Availability Status
     if( $input_quantity < 1 ){
         $status="Not Available";
@@ -62,18 +70,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($author_err) && empty($edition_err) && empty($status_err) && empty($price_err) && empty($quantity_err)){
+    if(empty($name_err) && empty($author_err) && empty($edition_err) && empty($status_err) && empty($image_err) && empty($price_err) && empty($quantity_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO books (name, author, edition, status,price, quantity) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO books (name, author, edition,image, status, price, quantity) VALUES (?, ?, ?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssii", $param_name, $param_author, $param_edition, $param_status, $param_price, $param_quantity);
+            mysqli_stmt_bind_param($stmt, "sssssii", $param_name, $param_author, $param_edition, $param_image, $param_status, $param_price, $param_quantity);
             
             // Set parameters
             $param_name = $name;
             $param_author = $author;
             $param_edition = $edition;
+            $param_image = $image;
             $param_status = $status;
             $param_price = $price;
             $param_quantity = $quantity;
@@ -170,6 +179,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input type="text" name="edition" class="form-control" value="<?php echo $edition; ?>">
                             <span class="help-block"><?php echo $edition_err;?></span>
                         </div>
+                        <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
+                            <label>Book's Image</label>
+                            <input type="text" name="image" class="form-control" value="<?php echo $image; ?>">
+                            <span class="help-block"><?php echo $image_err;?></span>
+                        </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Book's Price (in Rs.)</label>
                             <input type="text" name="price" class="form-control" value="<?php echo $price; ?>">
@@ -205,3 +219,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 </body>
 </html>
+
