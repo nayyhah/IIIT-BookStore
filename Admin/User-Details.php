@@ -110,7 +110,7 @@
     </div>
 
     <!-- Footer  -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="position: fixed">
       <p class="text-center">
         Email: library@iiit-bh.ac.in
         <br />Mobile: 0674-2653-321

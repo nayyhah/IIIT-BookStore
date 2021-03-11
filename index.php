@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- CSS Linked -->
-    <link rel="stylesheet" href="Admin/CSS/style.css" />
+    <link rel="stylesheet" href="Student/CSS/style.css" />
     <link rel="stylesheet" href="Student/CSS/navbar.css"/>
 
     <title>IIIT Book-Shop</title>
@@ -48,20 +48,7 @@
       </div>
     </nav>
 
-    <div class="home-content">
-      <h2>IIIT</h2>
-      <div class="text">
-        <p>Book Shop</p>
-      </div>
-    </div>
-
-    <!-- Footer  -->
-    <footer id="footer" class="footer">
-      <p class="text-center">
-        Email: library@iiit-bh.ac.in
-        <br />Mobile: 0674-2653-321
-      </p>
-    </footer>
+    <div class="home-content"></div>
 
     <!-- Bootsrtap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

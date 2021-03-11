@@ -7,35 +7,14 @@ Home Page
 */
 
 .Afterlogin {
-  background-image: url(../Images/bg.jpg);
-  background-repeat: no-repeat;
+  background-color: rgb(0, 0, 0);
   background-size: cover;
 }
-
 .home-content {
-  box-sizing: border-box;
-  height: 528px;
-  width: 460px;
-  margin-left: 560px;
-  margin-top: 130px; /* ERROR!!!!!! */
-  border-radius: 24rem;
-}
-.home-content h2,
-.home-content .text {
-  font-size: 70px;
-  text-shadow: 2px 2px #412e2e;
-  color: rgb(19, 18, 18);
-}
-
-.home-content h2 {
-  padding-top: 130px;
-  padding-left: 140px;
-  font-family: 'Fascinate', cursive;
-}
-
-.home-content .text {
-  padding-left: 70px;
-  font-family: 'Hachi Maru Pop', cursive;
+  background-image: url(../Images/bg.jpg);
+  background-size: cover;
+  height: 660px;
+  width: 1535px; 
 }
 
 /* Mobile View */
@@ -43,28 +22,10 @@ Home Page
   .Afterlogin {
     background-image: url(../Images/bg1.jpg);
     background-repeat: repeat-y;
+    background-color: #211a1a;
   }
-  .home-content {
-    height: 280px;
-    width: 280px;
-    margin-left: 35px;
-    margin-top: 85px; /* ERROR!!!!!! */
-    border-radius: 24rem;
-  }
-  .home-content h2,
-  .home-content .text {
-    font-size: 43px;
-    text-shadow: 2px 2px #412e2e;
-  }
-  .home-content h2 {
-    padding-top: 80px;
-    padding-left: 100px;
-  }
-  .home-content .text {
-    padding-left: 43px;
-  }
-
 }
+
 
 /*
 ====================

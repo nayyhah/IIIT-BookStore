@@ -166,7 +166,7 @@
                                         echo "<th>Book Name</th>";
                                         echo "<th>Author</th>";
                                         echo "<th>Availability Status</th>";
-                                        echo "<th>Checkout Book</th>";
+                                        echo "<th>Book Details</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";

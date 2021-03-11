@@ -7,63 +7,24 @@ Home Page
 */
 
 .Afterlogin {
-  background-image: url(../Images/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(0, 0, 0);
 }
 .home-content {
-  box-sizing: border-box;
-  height: 590px;
-  width: 460px;
-  margin-left: 560px;
-  margin-top: 130px; /* ERROR!!!!!! */
-  border-radius: 24rem;
+  background-image: url(../Images/bg.jpg);
+  background-size: cover;
+  height: 660px;
+  width: 1535px; 
 }
-.home-content h2,
-.home-content .text {
-  font-size: 70px;
-  text-shadow: 2px 2px #412e2e;
-  color: rgb(19, 18, 18);
-}
-
-.home-content h2 {
-  padding-top: 130px;
-  padding-left: 140px;
-  font-family: 'Fascinate', cursive;
-}
-
-.home-content .text {
-  padding-left: 70px;
-  font-family: 'Hachi Maru Pop', cursive;
-}
-
 
 /* Mobile View */
 @media screen and (max-width: 650px) {
   .Afterlogin {
     background-image: url(../Images/bg1.jpg);
     background-repeat: repeat-y;
-  }
-  .home-content {
-    height: 280px;
-    width: 280px;
-    margin-left: 35px;
-    margin-top: 85px; /* ERROR!!!!!! */
-    border-radius: 24rem;
-  }
-  .home-content h2,
-  .home-content .text {
-    font-size: 43px;
-    text-shadow: 2px 2px #412e2e;
-  }
-  .home-content h2 {
-    padding-top: 80px;
-    padding-left: 100px;
-  }
-  .home-content .text {
-    padding-left: 43px;
+    background-color: #211a1a;
   }
 }
+
 
 /*
 ====================
@@ -240,4 +201,3 @@ Add to Cart Page
   clear: both;
   margin: 38px 0px;
 }
-

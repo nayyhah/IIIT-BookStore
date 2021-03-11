@@ -212,7 +212,7 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
     </nav>
 
     <!-- Update Book Content -->
-    <div class="wrapper">
+    <div class="wrapper" style="margin-bottom: 50px">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
