@@ -118,7 +118,7 @@
     </nav>
 
     <div id="shopping-cart">
-        <div class="txt-heading">Shopping Cart</div>
+        <div class="txt-heading" style="font-size:25px; color: rgb(120, 120, 201);">Shopping Cart <i class="fa fa-shopping-cart"  aria-hidden="true"></i></div>
         <a id="btnEmpty" href="BookCart.php?action=empty">Empty Cart</a>
         <!-- <a id="btnEmpty" href="BookCart.php?action=empty" style="margin-right: 15px; color: green; border-color: green">ORDER</a> -->
 
@@ -131,12 +131,13 @@
         <table class="tbl-cart" cellpadding="10" cellspacing="1">
             <tbody>
                 <tr>
-                    <th style="text-align:left;">Book Name</th>
-                    <th style="text-align:left;" >Author</th>
-                    <th style="text-align:right;" width="5%">quantity</th>
-                    <th style="text-align:right;" width="10%">Unit Price</th> 
-                    <th style="text-align:right;" width="10%">Price</th>
-                    <th style="text-align:center;" width="5%">Remove</th>                    </tr>
+                    <th style="text-align:left; font-size:18px; ">Book Name</th>
+                    <th style="text-align:left; font-size:17px; " >Author</th>
+                    <th style="text-align:center; font-size:16px; " width="7%">Quantity</th>
+                    <th style="text-align:center; font-size:16px; " width="7%">Unit Price</th> 
+                    <th style="text-align:right; font-size:16px; " width="10%">Price</th>
+                    <th style="text-align:center; font-size:16px; " width="10%">Remove</th>       
+                </tr>
 
                     <?php		
                         foreach ($_SESSION["cart_item"] as $item){
@@ -144,12 +145,12 @@
 		            ?>
 
 				<tr>
-			        <td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
-			        <td><?php echo $item["author"]; ?></td>
-			        <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-			        <td  style="text-align:right;"><?php echo "<i class='fa fa-inr' aria-hidden='true'></i> ".$item["price"]; ?></td>
-				    <td  style="text-align:right;"><?php echo "<i class='fa fa-inr' aria-hidden='true'></i> ". number_format($item_price,2); ?></td>
-				    <td style="text-align:center;"><a href="BookCart.php?action=remove&bookid=<?php echo $item["bookid"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+			        <td style="font-size:14px;" ><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
+			        <td style="font-size:14px;" ><?php echo $item["author"]; ?></td>
+			        <td style="text-align:center; font-size:13px;"><?php echo $item["quantity"]; ?></td>
+			        <td  style="text-align:center; font-size:13px;"><?php echo "<i class='fa fa-inr' aria-hidden='true'></i> ".$item["price"]; ?></td>
+				    <td  style="text-align:right; font-size:13px;"><?php echo "<i class='fa fa-inr' aria-hidden='true'></i> ". number_format($item_price,2); ?></td>
+				    <td style="text-align:center; font-size:13px;"><a href="BookCart.php?action=remove&bookid=<?php echo $item["bookid"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
                 </tr>
 
 				<?php
@@ -158,8 +159,8 @@
 		        }?>
 
                 <tr>
-                    <td colspan="2" align="right">Total:</td>
-                    <td align="right"><?php echo $total_quantity; ?></td>
+                    <td colspan="2" align="right">TOTAL :</td>
+                    <td align="center"><?php echo $total_quantity; ?></td>
                     <td align="right" colspan="2"><strong><?php echo "<i class='fa fa-inr' aria-hidden='true'></i> ".number_format($total_price, 2); ?></strong></td>
                     <td></td>
                 </tr>
@@ -172,7 +173,7 @@
     </div>
 
     <div id="product-grid">
-	    <div class="txt-heading">Products</div>
+	    <div class="txt-heading" style="font-size:25px; color: rgb(120, 120, 201);" >Books Available <i class="fa fa-bookmark-o" aria-hidden="true"></i></div>
 	    <?php
 	        $product_array = $db_handle->runQuery("SELECT * FROM books ORDER BY bookid ASC");
             if (!empty($product_array)) { 
@@ -190,7 +191,17 @@
 		        </div>
 	    <?php } } ?>
     </div>
-                    <div style="height: 900px"></div>
+
+
+    <div style="height: 1200px;"></div>
+
+    <!-- Footer  -->
+    <footer id="footer" class="footer">
+      <p class="text-center">
+        Email: bookshop@iiit-bh.ac.in
+        <br />Mobile: 0674-2653-321
+      </p>
+    </footer>
     
 
     <!-- Bootsrtap JavaScript -->

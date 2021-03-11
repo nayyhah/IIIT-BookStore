@@ -269,7 +269,7 @@ if(isset($_POST["bookid"]) && !empty($_POST["bookid"])){
     <!-- Footer  -->
     <footer id="footer" class="footer">
       <p class="text-center">
-        Email: library@iiit-bh.ac.in
+        Email: bookshop@iiit-bh.ac.in
         <br />Mobile: 0674-2653-321
       </p>
     </footer>

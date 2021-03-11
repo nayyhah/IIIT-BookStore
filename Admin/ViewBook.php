@@ -139,7 +139,7 @@ if(isset($_GET["bookid"]) && !empty(trim($_GET["bookid"]))){
     <!-- Footer  -->
     <footer id="footer" class="footer" style="position: fixed">
       <p class="text-center">
-        Email: library@iiit-bh.ac.in
+        Email: bookshop@iiit-bh.ac.in
         <br />Mobile: 0674-2653-321
       </p>
     </footer>
