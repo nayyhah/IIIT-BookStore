@@ -1,2 +1,2 @@
-# IIIT-Book-Shop-Automation
+# IIIT BookStore Automation
 RDBMS Project
