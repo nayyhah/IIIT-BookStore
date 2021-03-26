@@ -11,6 +11,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/style.css" />
@@ -34,14 +36,15 @@
                 </button>
                 <a class="navbar-brand" href="#"> 
                     <img style="width: 64px" src="Images/iiit-logo.png"alt="iiit logo"/>
-                    <span class="iiitbookstore">IIIT Book-Shop</span>
+                    <span class="iiitbookstore" style="font-family: 'Open Sans', sans-serif; font-weight:600; font-size: 21px;">IIIT Book-Shop</span>
                 </a>
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php">Home</a></li>
-                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
+                <li><a href="Admin-AHome.php">Home</a></li>
+                <li><a href="Book-Details.php">Books <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">Users <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
+                <li><a href="Orders.php">Orders <i class="fa fa-shopping-bag" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>

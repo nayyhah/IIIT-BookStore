@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: AHome.php");
+    header("location: Admin-AHome.php");
     exit;
 }
  
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: AHome.php");
+                            header("location: Admin-AHome.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -101,6 +101,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/navbar.css">
@@ -122,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </button>
                 <a class="navbar-brand" href="#"> 
                     <img style="width: 64px" src="Images/iiit-logo.png"alt="iiit logo"/>
-                    <span class="iiitbookstore">IIIT Book-Shop</span>
+                    <span class="iiitbookstore" style="font-family: 'Open Sans', sans-serif; font-weight:600; font-size: 21px;">IIIT Book-Shop</span>
                 </a>
             </div>
             <div id="navbar6" class="navbar-collapse collapse">

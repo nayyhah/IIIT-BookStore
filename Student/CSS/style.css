@@ -43,10 +43,12 @@ Book Details
 
 .book-details tbody tr:hover {
   background-color: #c9ced3;
+  
 }
 
 .book-details .page-header h2 {
   margin-top: 0;
+  
 }
 .book-details table tr td:last-child a {
   margin-left: 40px;

@@ -65,7 +65,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     $email_err = "This Email Id already exists.";
-                } else{
+                } 
+                elseif(!filter_var($param_email, FILTER_VALIDATE_EMAIL)){
+                    $email_err = "Please enter a valid Email Id.";
+                }
+                else{
                     $email = trim($_POST["email"]);
                 }
             } else{
@@ -77,8 +81,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 
+    function validate_phone_number($phonenum)
+    {
+        // Allow +, - and . in phone number
+        $filtered_phone_number = filter_var($phonenum, FILTER_SANITIZE_NUMBER_INT);
+        // Remove "-" from number
+        $phone_to_check = str_replace("-", "", $filtered_phone_number);
+
+        // Check the lenght of number
+        // This can be customized if you want phone number from a specific country
+        if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) 
+        {
+            return false;
+        } 
+        else 
+        {
+            return true;
+        }
+    }
+
     // Validate Phone Number
-    if(empty(trim($_POST["phonenum"]))){
+    if(empty(trim($_POST["phonenum"])))
+    {
         $phonenum_err = "Please enter a Phone Number.";
     }
     else
@@ -94,20 +118,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_phonenum = trim($_POST["phonenum"]);
             
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if(mysqli_stmt_execute($stmt))
+            {
                 /* store result */
                 mysqli_stmt_store_result($stmt);
 
-                $phonenum = trim($_POST["phonenum"]);
-            } else{
+                if(validate_phone_number($param_phonenum) == true)
+                {
+                    $phonenum = trim($_POST["phonenum"]);
+                }
+                else
+                {
+                    $phonenum_err = "Please enter a valid Phone Number.";
+                } 
+            } 
+            else
+            {
                 echo "Oops! Something went wrong. Please try again later.";
             }
-
             // Close statement
             mysqli_stmt_close($stmt);
         }
     }
-
     
     // Validate password
     if(empty(trim($_POST["password"]))){
@@ -136,7 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssis", $param_username, $param_email, $param_phonenum, $param_password);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_email, $param_phonenum, $param_password);
             
             // Set parameters
             $param_username = $username;
@@ -163,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html>
-<head>
+<head translate="no">
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
@@ -175,6 +207,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/navbar.css">
@@ -196,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </button>
                 <a class="navbar-brand" href="#"> 
                     <img style="width: 64px" src="Images/iiit-logo.png"alt="iiit logo"/>
-                    <span class="iiitbookstore">IIIT Book-Shop</span>
+                    <span class="iiitbookstore" style="font-family: 'Open Sans', sans-serif; font-weight:600; font-size: 21px;">IIIT Book-Shop</span>
                 </a>
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
@@ -208,6 +242,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
       </div>
     </nav>
+
 
     <!-- Login Content -->
     <div class="login-content">
@@ -252,11 +287,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </form>
         </div>
     </div> 
-
+    
     <!-- Footer -->
     <footer id="footer" class="footer" style="position: fixed">
       <p class="text-center">
-        Email: bookshop@iiit-bh.ac.in
+        Email: bookstore@iiit-bh.ac.in
         <br />Mobile: 0674-2653-321
       </p>
     </footer>
@@ -265,7 +300,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- JavaScript Linked-->
-    <script src="../Javascript/navbar.js"></script>  
 </body>
 </html>

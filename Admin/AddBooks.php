@@ -118,15 +118,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS Linked -->
-    <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/navbar.css"/>
+    
+    <!-- Additional CSS for Search Box -->
+    <style type="text/css">
+        .wrapper .row a{
+            background-color:rgb(87, 85, 85); 
+            color:white; 
+            border:none;
+        }
+        .wrapper .row a:hover{
+            background-color:rgb(75, 74, 74); 
+            color:white; 
+            border:none;
+        }
+    </style>
 
     <title>IIIT Book-Shop</title>
 
 </head>
-<body class="add-books">
+<body class="add-books" style="background-color:rgb(12, 12, 12); color:rgb(218, 214, 214);">
     
     <!-- Navigation -->
     <nav class="navbar-sticky navbar navbar-inverse navbar-static-top navigation">
@@ -140,14 +155,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </button>
                 <a class="navbar-brand" href="#"> 
                     <img style="width: 64px" src="Images/iiit-logo.png"alt="iiit logo"/>
-                    <span class="iiitbookstore">IIIT Book-Shop</span>
+                    <span class="iiitbookstore" style="font-family: 'Open Sans', sans-serif; font-weight:600; font-size: 21px;">IIIT Book-Shop</span>
                 </a>
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
-                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
+                <li><a href="Admin-AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li><a href="Book-Details.php">Books <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">Users <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
+                <li><a href="Orders.php">Orders <i class="fa fa-shopping-bag" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
@@ -155,44 +171,44 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </nav>
 
     <!-- Add Books Content -->
-    <div class="wrapper" style="margin-bottom: 40px">
+    <div class="wrapper" style=" margin: 0 auto; background-color:#222121; margin-top:50px; border-radius:4px; width:650px; margin-bottom:50px; padding:0px 60px 40px 40px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="page-header">
-                        <h2>Add Book</h2>
+                    <div class="page-header" style="border-color:rgb(53, 51, 51);">
+                        <h2 style="color:rgb(157, 115, 255); ">Add Book</h2>
                     </div>
-                    <p>Please fill this form and submit to add book record to the database.</p>
+                    <p style="color:rgb(211, 198, 241);">Please fill this form and submit to add book record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                             <label>Book's Name</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
+                            <input style="background-color:rgb(12, 12, 12); border-color:rgb(53, 51, 51);" type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($author_err)) ? 'has-error' : ''; ?>">
                             <label>Author's Name</label>
-                            <input type="text" name="author" class="form-control" value="<?php echo $author; ?>">
+                            <input style="background-color:rgb(12, 12, 12); border-color:rgb(53, 51, 51);" type="text" name="author" class="form-control" value="<?php echo $author; ?>">
                             <span class="help-block"><?php echo $author_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($edition_err)) ? 'has-error' : ''; ?>">
                             <label>Book's Edition</label>
-                            <input type="text" name="edition" class="form-control" value="<?php echo $edition; ?>">
+                            <input style="background-color:rgb(12, 12, 12); border-color:rgb(53, 51, 51);" type="text" name="edition" class="form-control" value="<?php echo $edition; ?>">
                             <span class="help-block"><?php echo $edition_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
-                            <label>Book's Image</label>
-                            <input type="text" name="image" class="form-control" value="<?php echo $image; ?>">
-                            <span class="help-block"><?php echo $image_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
                             <label>Book's Price (in Rs.)</label>
-                            <input type="text" name="price" class="form-control" value="<?php echo $price; ?>">
+                            <input style="background-color:rgb(12, 12, 12); border-color:rgb(53, 51, 51);" type="text" name="price" class="form-control" value="<?php echo $price; ?>">
                             <span class="help-block"><?php echo $price_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($quantity_err)) ? 'has-error' : ''; ?>">
                             <label>Quantity</label>
-                            <input type="text" name="quantity" class="form-control" value="<?php echo $quantity; ?>">
+                            <input style="background-color:rgb(12, 12, 12); border-color:rgb(53, 51, 51);" type="text" name="quantity" class="form-control" value="<?php echo $quantity; ?>">
                             <span class="help-block"><?php echo $quantity_err;?></span>
+                        </div>
+                        <div class="form-group <?php echo (!empty($image_err)) ? 'has-error' : ''; ?>">
+                            <label>Book's Image</label>
+                            <input type="file" name="image" class="form-control-file" value="<?php echo $image; ?>">
+                            <span class="help-block"><?php echo $image_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="Book-Details.php" class="btn btn-default">Cancel</a>
@@ -205,7 +221,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Footer  -->
     <footer id="footer" class="footer">
       <p class="text-center">
-        Email: bookshop@iiit-bh.ac.in
+        Email: bookstore@iiit-bh.ac.in
         <br />Mobile: 0674-2653-321
       </p>
     </footer>

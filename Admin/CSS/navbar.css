@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
 @import url(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 
 /*
@@ -19,13 +19,8 @@
 .navigation .navbar-brand {
   display: flex;
   align-items: center;
-  font-family: "RocknRoll One", sans-serif;
   color: rgb(41, 139, 41);
   margin-top: 15px;
-}
-
-.navigation .navbar-brand .iiitbookstore {
-  margin-top: 5px;
 }
 
 .navigation .navbar-brand:hover {
@@ -48,6 +43,13 @@
 /* Logout button */
 .logout:hover {
   color: #2320f0 !important;
+}
+
+.navigation .navbar-brand .iiitbookstore {
+  margin-top: 5px;
+  font-family: 'Open Sans', sans-serif; 
+  font-weight:600;
+  font-size: 21px;
 }
 
 /* Mobile View */
@@ -77,7 +79,6 @@
     font-size: 12px;
   }
 }
-
 
 
 

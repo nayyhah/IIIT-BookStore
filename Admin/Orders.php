@@ -64,8 +64,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="Admin-AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
                 <li><a href="Book-Details.php">Books <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
-                <li class="active"><a href="User-Details.php">Users <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
-                <li><a href="Orders.php">Orders <i class="fa fa-shopping-bag" aria-hidden="true"></i> </a> </li>
+                <li><a href="User-Details.php">Users <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
+                <li class="active"><a href="Orders.php">Orders <i class="fa fa-shopping-bag" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
@@ -77,37 +77,40 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left" style='color:rgb(157, 115, 255);'>User Details</h2>
+                        <h2 class="pull-left" style='color:rgb(157, 115, 255);'>Order Details  <i class="fa fa-shopping-bag" aria-hidden="true"></i></h2>
                     </div>
                     <?php
                     // Include config file
                     require_once "../connectserver.php";
                     
                     // Attempt select query execution
-                    $sql = "SELECT * FROM users";
+                    // $sql = "SELECT * FROM users";
+
+                    $sql = "SELECT orders.orderid, orders.ship_name, orders.ship_address, orders.ship_city, orders.ship_state, orders.ship_zip_code, orders.date, order_items.book_isbn, order_items.quantity FROM orders INNER JOIN order_items ON orders.orderid = order_items.orderid "; 
+
+
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-hover'>";
                                 echo "<thead style='font-size: 17px;'>";
                                     echo "<tr>";
-                                        echo "<th style='border-color:rgb(53, 51, 51);'>Student Id</th>";
-                                        echo "<th style='border-color:rgb(53, 51, 51);'>Username</th>";
-                                        echo "<th style='border-color:rgb(53, 51, 51);'>Email Id</th>";
-                                        echo "<th style='border-color:rgb(53, 51, 51);'>Phone Number</th>";
-                                        echo "<th style='border-color:rgb(53, 51, 51);'>Action</th>";
+                                        echo "<th style='border-color:rgb(53, 51, 51);'>OrderId</th>";
+                                        echo "<th style='border-color:rgb(53, 51, 51);'>Customer Name</th>";
+                                        echo "<th style='border-color:rgb(53, 51, 51);'>BookID</th>";
+                                        echo "<th style='border-color:rgb(53, 51, 51);'>Quantity</th>";
+                                        echo "<th style='border-color:rgb(53, 51, 51);'>Date</th>";
+                                        echo "<th style='border-color:rgb(53, 51, 51);'>Address</th>";
                                     echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['id'] . "</td>";
-                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['username'] . "</td>";
-                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['email'] . "</td>";
-                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['phonenum'] . "</td>";
-                                        echo "<td style='border-color:rgb(53, 51, 51);'>";
-                                            echo "<a style='margin-right: 17px; color:rgb(50, 165, 241);' href='ViewUser.php?id=". $row['id'] ."' title='User Details' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a style='margin-right: 17px; color:rgb(50, 165, 241);' href='DeleteUser.php?id=". $row['id'] ."' title='Remove User' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
-                                        echo "</td>";
+                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['orderid'] . "</td>";
+                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['ship_name'] . "</td>";
+                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['book_isbn'] . "</td>";
+                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['quantity'] . "</td>";
+                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['date'] . "</td>";
+                                        echo "<td style='border-color:rgb(53, 51, 51);'>" . $row['ship_address'] ." , ".$row['ship_city']. " , ".$row['ship_state'] ." , ".$row['ship_zip_code']. "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</tbody>";                            

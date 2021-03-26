@@ -12,15 +12,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+   
     <!-- CSS Linked -->
-    <link rel="stylesheet" href="Student/CSS/style.css" />
     <link rel="stylesheet" href="Student/CSS/navbar.css"/>
+    <link rel="stylesheet" href="home.css"/>
 
     <title>IIIT Book-Shop</title>
 
 </head>
-<body class="Afterlogin">
+<body class="Afterlogin"  translate="no">
 
     <!-- Navigation -->
     <nav class="navbar-sticky navbar navbar-inverse navbar-static-top navigation">
@@ -33,8 +33,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#"> 
-                    <img style="width: 64px" src="Student/Images/iiit-logo.png"alt="iiit logo"/>
-                    <span class="iiitbookstore">IIIT Book-Shop</span>
+                    <span class="iiitbookstore" style="font-family: 'Open Sans', sans-serif;">IIIT Book-Store</span>
                 </a>
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
@@ -48,13 +47,37 @@
       </div>
     </nav>
 
-    <div class="home-content"></div>
+    <!-- Home Content -->
+
+    <div class="container">
+	    <div id="login-box">
+		    <div class="logo">
+			    <img src="Student/Images/iiit-logo.png" class="img img-responsive img-circle center-block" />
+			    <h1 class="logo-caption"><span class="tweak">IIIT</span> Book-Store</h1>
+		    </div>
+	    </div>
+    </div>
+    
+    
+    <!-- Footer  -->
+    <footer id="footer" class="footer" style="position: fixed">
+      <p class="text-center">
+        Email: bookstore@iiit-bh.ac.in
+        <br />Mobile: 0674-2653-321
+      </p>
+    </footer>
+
+    <div id="particles-js"></div>
+   
 
     <!-- Bootsrtap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- JavaScript Linked-->
-    <script src="Javascript/navbar.js"></script>
+    <script src="home.js"></script>
+
   </body>
 </html>
+
+

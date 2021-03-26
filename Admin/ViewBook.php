@@ -66,6 +66,8 @@ if(isset($_GET["bookid"]) && !empty(trim($_GET["bookid"]))){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="CSS/style.css" />
@@ -74,7 +76,7 @@ if(isset($_GET["bookid"]) && !empty(trim($_GET["bookid"]))){
     <title>IIIT Book-Shop</title>
 
 </head>
-<body class="view-book">
+<body class="view-book" style="background-color:rgb(12, 12, 12); color:rgb(202, 199, 199);">
 
     <!-- Navigation -->
     <nav class="navbar-sticky navbar navbar-inverse navbar-static-top navigation">
@@ -88,14 +90,15 @@ if(isset($_GET["bookid"]) && !empty(trim($_GET["bookid"]))){
                 </button>
                 <a class="navbar-brand" href="#"> 
                     <img style="width: 64px" src="Images/iiit-logo.png"alt="iiit logo"/>
-                    <span class="iiitbookstore">IIIT Book-Shop</span>
+                    <span class="iiitbookstore" style="font-family: 'Open Sans', sans-serif; font-weight:600; font-size: 21px;">IIIT Book-Shop</span>
                 </a>
             </div>
             <div id="navbar6" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
-                <li><a href="Book-Details.php">Book-Details <i class="fa fa-bookmark-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a></li>
-                <li><a href="User-Details.php">User-Details <i class="fa fa-address-book-o" style="color: rgb(160, 159, 158)" aria-hidden="true"></i> </a> </li>
+                <li><a href="Admin-AHome.php"><i class="fa fa-home fa-fw" style="font-size: 20px;" aria-hidden="true"></i>Home</a></li>
+                <li><a href="Book-Details.php">Books <i class="fa fa-bookmark-o" aria-hidden="true"></i> </a></li>
+                <li><a href="User-Details.php">Users <i class="fa fa-address-book-o" aria-hidden="true"></i> </a> </li>
+                <li><a href="Orders.php">Orders <i class="fa fa-shopping-bag" aria-hidden="true"></i> </a> </li>
                 <li><a class="logout" href="Admin-Logout.php">Logout <i class="fa fa-sign-out" style="color: blue" aria-hidden="true"></i> </a> </li>
             </ul>
         </div>
@@ -103,32 +106,32 @@ if(isset($_GET["bookid"]) && !empty(trim($_GET["bookid"]))){
     </nav>
 
     <!-- View Book Content -->
-    <div class="wrapper">
+    <div class="wrapper" style=" margin: 0 auto; background-color:#222121; margin-top:30px; border-radius:4px; width:650px; margin-bottom:50px; padding:0px 60px 35px 40px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="page-header">
-                        <h1>View Book</h1>
+                    <div class="page-header" style="border-color:rgb(53, 51, 51);">
+                        <h2 style="color:rgb(157, 115, 255); ">Book Details</h2>
                     </div>
                     <div class="form-group">
-                        <label>Book's Name</label>
-                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
+                        <label>Book's Name :</label>
+                        <p class="form-control-static" style="color:rgb(211, 198, 241); font-size:16px;"><?php echo $row["name"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Book's Author</label>
-                        <p class="form-control-static"><?php echo $row["author"]; ?></p>
+                        <label>Book's Author :</label>
+                        <p class="form-control-static" style="color:rgb(211, 198, 241); font-size:16px;"><?php echo $row["author"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Edition</label>
-                        <p class="form-control-static"><?php echo $row["edition"]; ?></p>
+                        <label>Edition :</label>
+                        <p class="form-control-static" style="color:rgb(211, 198, 241); font-size:16px;"><?php echo $row["edition"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Book's Price (in Rs.)</label>
-                        <p class="form-control-static"><?php echo $row["price"]; ?></p>
+                        <label>Book's Price (in Rs.) :</label>
+                        <p class="form-control-static" style="color:rgb(211, 198, 241); font-size:16px;"><?php echo $row["price"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Quantity Available</label>
-                        <p class="form-control-static"><?php echo $row["quantity"]; ?></p>
+                        <label>Quantity Available :</label>
+                        <p class="form-control-static" style="color:rgb(211, 198, 241); font-size:16px;"><?php echo $row["quantity"]; ?></p>
                     </div>
                     <p><a href="Book-Details.php" class="btn btn-primary">Back</a></p>
                 </div>
@@ -139,7 +142,7 @@ if(isset($_GET["bookid"]) && !empty(trim($_GET["bookid"]))){
     <!-- Footer  -->
     <footer id="footer" class="footer" style="position: fixed">
       <p class="text-center">
-        Email: bookshop@iiit-bh.ac.in
+        Email: bookstore@iiit-bh.ac.in
         <br />Mobile: 0674-2653-321
       </p>
     </footer>
