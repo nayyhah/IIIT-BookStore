@@ -3,6 +3,9 @@
 <p align="center">
     <img src="./Student/Images/iiit-logo.png" alt="Logo" width="200">
   </a>
+  
+####  :) Visit The Website
+ > [IIIT BOOKSTORE](http://iiit-bookshop.42web.io/)
  
 ## Features
 * <b>Registration :</b> Create an account using username,email,phone number and password before you enter the bookstore.
@@ -68,5 +71,3 @@
    
 
 
-####  :) Visit The Website
- > [IIIT BOOKSTORE](http://iiit-bookshop.42web.io/)
