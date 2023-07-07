@@ -2,7 +2,7 @@
 
 <p align="center">
     <img src="./Student/Images/iiit-logo.png" alt="Logo" width="200">
-  </a>
+  </p>
   
 ####  :) Visit The Website
  > [IIIT BOOKSTORE](http://iiit-bookshop.42web.io/)
